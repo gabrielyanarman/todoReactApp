@@ -50,15 +50,11 @@ function TodoList() {
             <AddTodo addTodo = {addTodo}/>
             <div className="items">
                 {todos.map((todo) => {
-                if(todo.text) {
                     return (
                     <div key={todo.id}>
                         <TodoItem text = {todo.text} completed = {todo.completed} removeTodo = {removeTodo} id = {todo.id} completedTodo = {completedTodo} editTodo = {editTodo}/>
                     </div>
                     )
-                } else {
-                    removeTodo(todo.id)
-                }
         })}
             </div>
             <TodoFooter completed = {todos.filter(todo => todo.completed == true).length} countTodos = {todos.length} filterTodo = {filterTodo}/>

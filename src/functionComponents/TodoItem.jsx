@@ -11,6 +11,10 @@ function TodoItem({completed,text,removeTodo,id,completedTodo,editTodo}) {
     }
 
     if(!edit) {
+        if(!text) {
+            removeTodo(id)
+            return
+        }
         return (
             <div className="todos-item">
                 <label>
